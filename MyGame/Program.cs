@@ -17,10 +17,14 @@ namespace MyGame
                 Enemies[i] = enemyname;
             }
 
+            Enemies[0].TakeDamage(20);
+            Enemies[1].PickupPowerUp(PowerUp.Shield,40);
+
             foreach (Enemy e in Enemies)
             {
                 Console.WriteLine($"{e.GetName()} {e.GetHealth()} {e.GetShield()}");
             }
+            
         }
     }
 }

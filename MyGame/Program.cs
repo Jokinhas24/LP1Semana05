@@ -19,7 +19,7 @@ namespace MyGame
 
             Enemies[0].TakeDamage(80);
             Enemies[0].PickupPowerUp(PowerUp.Health,30);
-            
+
             Enemies[1].PickupPowerUp(PowerUp.Shield,40);
             Enemies[1].TakeDamage(135);
             Enemies[1].PickupPowerUp(PowerUp.Health,70);
@@ -28,7 +28,7 @@ namespace MyGame
             {
                 Console.WriteLine($"{e.GetName()} {e.GetHealth()} {e.GetShield()}");
             }
-            
+            Console.WriteLine($"Enemies picked up {Enemy.GetPowerUps()} power ups.");
         }
     }
 }

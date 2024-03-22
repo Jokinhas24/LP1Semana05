@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -31,21 +32,20 @@ namespace MyGameFriday
             int numenemies = 0;
             foreach (Enemy enemy in enemies)
             {
-                numenemies += 1;
+                if (enemy != null)
+                {
+                    numenemies += 1;
+                }
             }
             return numenemies;
         }
         public void PrintEnemies()
         {
-            for (int i; i < GetNumRooms(); i++)
+            for (int i = 0; i < GetNumRooms(); i++)
             {
                 if (enemies[i] != null)
                 {
-
-                }
-                else
-                {
-                    Console.WriteLine($"Room {e}: {enemies[e]}");
+                    Console.WriteLine($"Room {i}: {enemies[i].GetName()}");
                 }
             }
         }

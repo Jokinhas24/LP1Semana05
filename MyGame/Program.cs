@@ -17,8 +17,12 @@ namespace MyGame
                 Enemies[i] = enemyname;
             }
 
-            Enemies[0].TakeDamage(20);
+            Enemies[0].TakeDamage(80);
+            Enemies[0].PickupPowerUp(PowerUp.Health,30);
+            
             Enemies[1].PickupPowerUp(PowerUp.Shield,40);
+            Enemies[1].TakeDamage(135);
+            Enemies[1].PickupPowerUp(PowerUp.Health,70);
 
             foreach (Enemy e in Enemies)
             {

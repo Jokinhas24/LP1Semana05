@@ -1,5 +1,6 @@
 using System;
 using System.Data;
+using System.Diagnostics.CodeAnalysis;
 
 namespace MyGame
 {
@@ -8,6 +9,7 @@ namespace MyGame
         private string name;
         private float health;
         private float shield;
+        private static int powerups = 0;
 
         public Enemy(string name)
         {
@@ -26,6 +28,10 @@ namespace MyGame
         public float GetShield()
         {
             return shield;
+        }
+        public static int GetPowerUps()
+        {
+            return powerups;
         }
         public void SetName(string new_name)
         {
@@ -67,6 +73,7 @@ namespace MyGame
                     shield = 100;
                 }
             }
+            powerups += 1;
         }
     }
 }

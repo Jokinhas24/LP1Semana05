@@ -1,3 +1,4 @@
+using System;
 using System.Data;
 
 namespace MyGame
@@ -10,13 +11,25 @@ namespace MyGame
 
         public Enemy(string name)
         {
-            this.name = name;
+            SetName(name);
             health = 100;
             shield = 0;
         }
         public string GetName()
         {
             return name;
+        }
+        public float GetHealth()
+        {
+            return health;
+        }
+        public float GetShield()
+        {
+            return shield;
+        }
+        public void SetName(string new_name)
+        {
+            this.name = new_name.Substring(0,8);
         }
         public void TakeDamage(float damage)
         {

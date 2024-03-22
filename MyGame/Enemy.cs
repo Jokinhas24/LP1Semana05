@@ -29,7 +29,14 @@ namespace MyGame
         }
         public void SetName(string new_name)
         {
-            this.name = new_name.Substring(0,8);
+            if (new_name.Length > 8)
+            {
+                this.name = new_name.Substring(0, 8);
+            }
+            else
+            {
+                this.name = new_name;
+            }
         }
         public void TakeDamage(float damage)
         {

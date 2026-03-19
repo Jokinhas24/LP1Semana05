@@ -1,4 +1,5 @@
 ﻿using System;
+using Spectre.Console;
 
 namespace DungeonStats
 {
@@ -15,6 +16,22 @@ namespace DungeonStats
             {
                 defense = int.Parse(args[1]);
             }
+            int damage = Damage(int.Parse(args[0]));
+            int defdamage = Damage(int.Parse(args[0]), defense);
+            int critdamage = CriticalHit(defdamage);
+
+            var table = new Table();
+  
+            // Add columns
+            table.AddColumn("Operation");
+            table.AddColumn("Result");
+  
+            // Add rows
+            table.AddRow($"Damage({damage})", $"{damage}");
+            table.AddRow($"Damage({damage}, {defense})", $"{defdamage}");
+            table.AddRow($"CriticalHit({defdamage})", $"{critdamage}");
+  
+            AnsiConsole.Write(table);
         }
         private static int Damage(int attack, int defense)
         {

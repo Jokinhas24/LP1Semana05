@@ -8,7 +8,7 @@ namespace DungeonStats
         private static void Main(string[] args)
         {
             int defense;
-            if (args[1] == null)
+            if (args.Length == 1)
             {
                 defense = 2;
             }
@@ -35,7 +35,7 @@ namespace DungeonStats
         }
         private static int Damage(int attack, int defense)
         {
-            if (defense > 0)
+            if (defense < 0)
             {
                 defense = 0;
             }
@@ -48,9 +48,13 @@ namespace DungeonStats
         private static int CriticalHit(int damage)
         {
             if (damage <= 0)
+            {
                 damage = 0;
+            }
             else
-                damage = 1 + CriticalHit(damage - 1);
+            {
+                damage += CriticalHit(damage - 1);
+            }
             return damage;
         }
     }

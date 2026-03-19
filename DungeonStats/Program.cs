@@ -6,7 +6,15 @@ namespace DungeonStats
     {
         private static void Main(string[] args)
         {
-            Console.WriteLine("Hello LP!");
+            int defense;
+            if (args[1] == null)
+            {
+                defense = 2;
+            }
+            else
+            {
+                defense = int.Parse(args[1]);
+            }
         }
         private static int Damage(int attack, int defense)
         {
